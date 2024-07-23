@@ -1,0 +1,30 @@
+Natasha verion
+
+2 X GIC-00199 (Pack of 10) product code: 16422265 Item: 200uL Pipette Tips v2 Cost per unit: £172
+
+This ones goes straight for the GMP code. This should be a maybe.
+Has pack info, but lacks grade.
+Required qty on her spreadsheet is not needed.
+
+Jessica version
+
+2 X 1101652500 1M Hydrochloric Acid, Emprove Expert, GMP Grade (GIR-00015), Cost per unit: £65 
+
+This one has the grade but lacks info about the unit / pack
+
+
+
+I need a mix between the two.
+
+Compulsary
+QTY
+CAT NO
+ITEM NAME
+COST PER UNIT
+SUPPLIER -Supplier is what we will base this on
+
+Gix is optional.
+Pack is optional.
+Grade is optional.
+
+QTY X CATNO:xxxx, Item: ITEM_NAME, Grade: GRADE Pack of:  , "gixno:" GIX,  Cost per Unit: COST PER UNIT

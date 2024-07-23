@@ -65,6 +65,18 @@ body {
     /* text-align: left; */
 }
 
+.content .description-section .instruction-section {
+    text-align: left;
+}
+
+.content .description-section .instruction-section ul {
+    margin: 2rem 0;
+}
+
+.content .description-section .instruction-section ul li {
+    margin: 0.5rem 0;
+}
+
 .content .description-section p {
     margin: 0.25rem 0;
     /* color: red; */
@@ -80,45 +92,36 @@ body {
 
 }
 
-/* form section */
-/* .content .form-section {
-    border: 1px solid black;
-    width: fit-content;
-    margin: 0 auto;
-} */
+
+
+.content .form-section .input-section p {
+    margin: 1.25rem 0;
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.content .form-section .input-section p:first-of-type {
+    margin-top: 0;
+}
 
 .content .form-section .input-section label {
     display: block;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--tertiary);
-}
+    width: 120px;
+    margin: 0 auto;
 
-.content .form-section .input-section {
-    margin: 1rem 0;
-    /* display: flex; */
-    /* flex-direction: column;
-    justify-content: center;
-    align-items: center; */
-}
 
-.content .form-section input[type=file]::file-selector-button {
-    border: 1px solid var(--tertiary);
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
-    color: #FFFFFF;
-    background-color: var(--tertiary);
-    width: fit-content;
-    cursor: pointer;
 }
 
 .content .form-section input[type=file] {
-    margin: 1rem 0;
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
 }
 
-
 .content .form-section .big-btn {
-    font-size: 1.2rem;
-    /* padding: 1rem 1.5rem; */
+    font-size: 1rem;
     background-color: var(--primary);
+    width: 150px;
+
 }

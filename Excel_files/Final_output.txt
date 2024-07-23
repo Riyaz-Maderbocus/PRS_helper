@@ -28,3 +28,17 @@ Pack is optional.
 Grade is optional.
 
 QTY X CATNO:xxxx, Item: ITEM_NAME, Grade: GRADE Pack of:  , "gixno:" GIX,  Cost per Unit: COST PER UNIT
+
+
+How it is reading a row.
+{
+  Item: 'Sigma Item 3',
+  Qty: 5,
+  'Cat No': 'Sigma_003',
+  Supplier: 'Sigma Aldrich',
+  'Grade (optional)': 'Test',
+  'Pack size (optional)': '1 box',
+  'GIX No (optional)': 'ABC',
+  'Cost per Unit': 20,
+  'Total Cost (optional)': 100
+}

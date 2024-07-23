@@ -30,20 +30,42 @@ let uniqueSuppliers = findUniqueSuppliers(arrItems);
 let final = "";
 for (let supplier of uniqueSuppliers) {
     // Makes heading for the supplier
-    let supplierText = "";
-    let supplierName = String(`${supplier} \n`)
-    supplierText += supplierName;
-    // Makes heading for the supplier
+    // let supplierText = "";
+    let supplierName = String(`\n****** ${supplier} ******\n\n\n`)
+    // supplierText += supplierName;
+    final += supplierName;
+    // Heading finishes here
+    // Get a total of the supplier
+    let total = 0;
     for (let row of arrItems) {
         if (row.Supplier === supplier) {
             console.log("********");
-            // console.log(row)
+
+            let newInfo = `${row["Qty"]} x Cat No: ${row["Cat No"]}, Item: ${row["Item"]}`
+            let gradeInfo = row["Grade (optional)"] ? `, Grade: ${row["Grade (optional)"]}` : "";
+            newInfo += gradeInfo;
+            let packInfo = row["Pack size (optional)"] ? `, Pack size: ${row["Pack size (optional)"]}` : "";
+            // console.log(packInfo);
+            newInfo += packInfo;
+            let gixInfo = row["GIX No (optional)"] ? `, GIX No: ${row["GIX No (optional)"]}` : "";
+            // console.log(gixInfo);
+            newInfo += gixInfo;
+            let unitCost = `, Cost per unit: £${parseFloat(row["Cost per Unit"])}`;
+            newInfo += unitCost;
+            console.log(unitCost);
+
+            total += parseFloat(row["Cost per Unit"]) * parseInt(row["Qty"])
+
+            console.log(newInfo);
             console.log("********");
+            final += newInfo;
+            final += "\n\n"
         }
     }
-    console.log(supplierText)
+    final += `Total is: £${total}\n\n\n\n`
+    // console.log(supplierText)
     // Add to the overall file
-    final += supplierText
+    // final += supplierText
 
 }
 
@@ -57,10 +79,10 @@ console.log(`${final}`)
 
 // console.log(final)
 
-// fs.writeFile("./output.txt", final, (err) => {
-//     if (err) {
-//         console.log(err)
-//     } else {
-//         console.log("file written")
-//     }
-// })
+fs.writeFile("./output.txt", final, (err) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log("file written")
+    }
+})

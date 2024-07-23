@@ -13,6 +13,32 @@ const headersArray = Object.keys(arrItems[0])
 console.log(headersArray);
 // [ 'Item', 'Cat no', 'Qty', 'Key' ]
 
+// console.log(headersArray.includes("Item", "Qty", "Cat No", "Supplier", "Grade (optional)", "Pack size (optional)", "GIX No (optional)", "Cost per Unit"));
+
+
+// This section will check to Excel header tampering*******
+
+headerTest = [
+    'Item',
+    'Qty',
+    'Cat No',
+    'Supplier',
+    'Grade (optional)',
+    'Pack size (optional)',
+    'GIX No (optional)',
+    'Cost per Unit'
+];
+
+let checkHeaders = (parentArray, subsetArray) => {
+    return subsetArray.every((el) => {
+        return parentArray.includes(el)
+    })
+}
+
+console.log(checkHeaders(headerTest, headersArray));
+
+// Tampering code end *************
+
 
 // Get the unique suppliers
 
@@ -79,10 +105,14 @@ console.log(`${final}`)
 
 // console.log(final)
 
-fs.writeFile("./output.txt", final, (err) => {
-    if (err) {
-        console.log(err)
-    } else {
-        console.log("file written")
-    }
-})
+// **********File writing code
+
+// fs.writeFile("./output.txt", final, (err) => {
+//     if (err) {
+//         console.log(err)
+//     } else {
+//         console.log("file written")
+//     }
+// })
+
+// **********File writing code

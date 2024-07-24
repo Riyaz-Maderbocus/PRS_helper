@@ -112,11 +112,21 @@ body {
 
 }
 
-.content .form-section input[type=file] {
+/* .content .form-section input[type=file] {
     opacity: 0;
     width: 0.1px;
     height: 0.1px;
     position: absolute;
+} */
+
+.content .form-section input::file-selector-button {
+    border: 1px solid var(--tertiary);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    color: #FFFFFF;
+    background-color: var(--tertiary);
+    width: fit-content;
+    cursor: pointer;
 }
 
 .content .form-section .big-btn {

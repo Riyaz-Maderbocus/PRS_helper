@@ -23,7 +23,11 @@
                     <!-- <h3>Instructions</h3> -->
                     <ul>
                         <li>It uses a template spreadsheet with your information and gives you a text file</li>
-                        <li>You can't change the names for the column headers, but you can move them around</li>
+                        <li>You can't change the names for the column headers, but you can move them around the top row
+                        </li>
+                        <li>Don't delete the column headers</li>
+                        <li>If you don't have a value for optional entries (e.g. GIX numbers), move that column above
+                            empty cells</li>
                         <li>Upload your spreadsheet using the upload button</li>
                         <li>Press submit to get your text file</li>
                     </ul>
@@ -42,8 +46,8 @@
                     <div class="input-section">
                         <p>Upload your spreadsheet with the button below</p>
 
-                        <label for="file-upload" class="btn-secondary">Upload</label>
-                        <input type="file" name="" id="file-upload">
+                        <!-- <label for="file-upload" class="btn-secondary">Upload</label> -->
+                        <input type="file" name="" id="file-upload" accept=".xlsx">
 
 
                         <p>Press submit to get the text file</p>

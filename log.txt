@@ -1,0 +1,31 @@
+Need to make this modular
+
+Excel reading and making JSON.
+
+Making the final string.
+
+Writing the data to a file. 
+
+
+Things that can cause errors.
+
+Wrong file type opened = Write a check function for this. See code below (this is using mutler)
+USED TRY/CATCH FOR THIS
+// Array of allowed files
+const array_of_allowed_files = ['png', 'jpeg', 'jpg', 'gif'];
+
+// Get the extension of the uploaded file
+const file_extension = image.originalname.slice(
+    ((image.originalname.lastIndexOf('.') - 1) >>> 0) + 2
+);
+
+// Check if the uploaded file is allowed
+if (!array_of_allowed_files.includes(file_extension)) {
+  throw Error('Invalid file');
+}
+
+Headers are changed in the xlsx file.
+
+Written a function for this.
+Try and catch works for this as well.
+

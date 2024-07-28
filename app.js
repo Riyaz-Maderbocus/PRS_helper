@@ -1,4 +1,5 @@
 const excel = require("./utils/excel_methods");
+const fileWriter = require("./utils/file_writer");
 
 async function test() {
     try {
@@ -13,6 +14,15 @@ async function test() {
         try {
             if (excel.checkHeaders(excel.headerTest, headers)) {
                 console.log("headers working")
+
+                // put in file writing code now
+                // console.log(fileWriter.getUniqueSuppliers(arrItems));
+                let uniqueSuppliers = fileWriter.getSuppliers(arrItems);
+                console.log(uniqueSuppliers);
+                let textThing = fileWriter.makeContent(uniqueSuppliers, arrItems);
+                console.log(textThing);
+
+
             } else {
                 throw new Error;
             }

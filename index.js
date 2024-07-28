@@ -79,6 +79,9 @@ for (let supplier of uniqueSuppliers) {
             let unitCost = `, Cost per unit: £${parseFloat(row["Cost per Unit"])}`;
             newInfo += unitCost;
             console.log(unitCost);
+            let subtotalCost = `, Subtotal = £${parseFloat(row["Cost per Unit"]) * parseInt(row["Qty"])}`;
+            newInfo += subtotalCost;
+            console.log(subtotalCost);
 
             total += parseFloat(row["Cost per Unit"]) * parseInt(row["Qty"])
 
@@ -97,9 +100,11 @@ for (let supplier of uniqueSuppliers) {
 
 console.log(`${final}`)
 
+
+// OLD CODE WRITER DON'T USE
 // let final = "";
 // for (let item of arrItems) {
-//     // console.log(`Cat number ${item["Cat no"]} is a ${item.Item} with key value of ${item.Key}`)
+//     console.log(`Cat number ${item["Cat no"]} is a ${item.Item} with key value of ${item.Key}`)
 //     final += `Cat number ${item["Cat no"]} is a ${item.Item} with key value of ${item.Key}\n`
 // }
 
@@ -107,12 +112,12 @@ console.log(`${final}`)
 
 // **********File writing code
 
-// fs.writeFile("./output.txt", final, (err) => {
-//     if (err) {
-//         console.log(err)
-//     } else {
-//         console.log("file written")
-//     }
-// })
+fs.writeFile("./output.txt", final, (err) => {
+    if (err) {
+        console.log(err)
+    } else {
+        console.log("file written")
+    }
+})
 
 // **********File writing code

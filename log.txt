@@ -29,3 +29,12 @@ Headers are changed in the xlsx file.
 Written a function for this.
 Try and catch works for this as well.
 
+
+
+Writing a file.
+Need the fs module to put this file into a chose directory.
+Name after the date
+
+Need to delete previous data present.
+
+Done the above, need to make it an express app.

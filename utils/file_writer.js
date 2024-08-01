@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-console.log("helo")
+const findRemoveSync = require('find-remove');
+// console.log("helo")
 
 console.log(path.join(__dirname, "/views"));
 
@@ -64,9 +65,42 @@ const makeContent = function (suppliers, excelJSON) {
     return final
 }
 
+const makeFile = function (location, data) {
+    fs.writeFile(location, data, (err) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log("file written")
+        }
+    })
+}
+
+
+const dateNamer = function () {
+    const d = new Date();
+    let date = d.toLocaleDateString();
+    let time = d.toLocaleTimeString();
+    let output = `${date}_${time}`;
+    output = String(output.replaceAll("/", "_"));
+    output = String(output.replaceAll(":", "_"));
+    return output;
+}
+
+const deleteOldFiles = function (location) {
+    findRemoveSync(location, {
+        age: {
+            seconds: 20
+        },
+        extensions: '.txt',
+        limit: 100
+    })
+}
 
 
 
 
 exports.getSuppliers = getUniqueSuppliers;
 exports.makeContent = makeContent;
+exports.makeFile = makeFile;
+exports.dateNamer = dateNamer;
+exports.deleteOldFiles = deleteOldFiles;

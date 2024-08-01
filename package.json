@@ -9,8 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-
   "dependencies": {
+    "find-remove": "^4.1.0",
     "xlsx": "^0.18.5"
   }
 }

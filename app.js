@@ -1,5 +1,8 @@
 const excel = require("./utils/excel_methods");
 const fileWriter = require("./utils/file_writer");
+const path = require("path");
+
+console.log(path.join(__dirname, "/views"));
 
 async function test() {
     try {
@@ -19,8 +22,18 @@ async function test() {
                 // console.log(fileWriter.getUniqueSuppliers(arrItems));
                 let uniqueSuppliers = fileWriter.getSuppliers(arrItems);
                 console.log(uniqueSuppliers);
-                let textThing = fileWriter.makeContent(uniqueSuppliers, arrItems);
-                console.log(textThing);
+                let data = fileWriter.makeContent(uniqueSuppliers, arrItems);
+                console.log(data);
+
+                try {
+                    console.log(fileWriter.dateNamer());
+                    let newFileName = fileWriter.dateNamer();
+                    let outputFolder = path.join(__dirname, "/outputs");
+                    fileWriter.deleteOldFiles(outputFolder);
+                    fileWriter.makeFile(`${outputFolder}/${newFileName}.txt`, data);
+                } catch (e) {
+                    console.log("Problem writing file");
+                }
 
 
             } else {

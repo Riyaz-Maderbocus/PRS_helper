@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PRS comment generator</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <div class="content">
+            <h1>PRS order helper</h1>
+
+            <div class="description-section">
+                <h2>This tool will help make the comment text in PRS quicker</h2>
+                <div class="instruction-section">
+                    <!-- <h3>Instructions</h3> -->
+                    <ul>
+                        <li>It uses a template spreadsheet with your information and gives you a text file</li>
+                        <li>You can't change the names for the column headers, but you can move them around the top row
+                        </li>
+                        <li>Don't delete the column headers</li>
+                        <li>If you don't have a value for optional entries (e.g. GIX numbers), move that column above
+                            empty cells</li>
+                        <li>Upload your spreadsheet using the upload button</li>
+                        <li>Press submit to get your text file</li>
+                    </ul>
+                    <!-- <p>It uses a template spreadsheet with your information and gives you a text file</p>
+                    <p>You can't change the names for the column headers, but you can move them around</p>
+
+                    <p>Upload your spreadsheet using the upload button</p>
+                    <p>Press submit to get your text file</p> -->
+                </div>
+                <p>Download a copy of the template using the button below</p>
+                <a href="" class="btn">Get template spreadsheet</a>
+            </div>
+
+            <div class="form-section">
+                <form action="/upload" method="post" id="form" enctype="multipart/form-data">
+                    <div class="input-section">
+                        <p>Upload your spreadsheet with the button below</p>
+
+                        <!-- <label for="file-upload" class="btn-secondary">Upload</label> -->
+                        <input type="file" name="file" id="file-upload" accept=".xlsx">
+
+
+                        <p>Press submit to get the text file</p>
+                        <button class="btn big-btn" type="submit">Submit</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- <script src="form.js"></script> -->
+    </body>
+
+</html>

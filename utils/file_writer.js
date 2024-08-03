@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require("fs/promises");
 const path = require("path");
 const findRemoveSync = require('find-remove');
 // console.log("helo")
@@ -65,15 +65,33 @@ const makeContent = function (suppliers, excelJSON) {
     return final
 }
 
-const makeFile = function (location, data) {
-    fs.writeFile(location, data, (err) => {
-        if (err) {
-            console.log(err)
-        } else {
-            console.log("file written")
-        }
-    })
+// const makeFile = async function (location, data) {
+//     return await fs.writeFile(location, data, (err) => {
+//         if (err) {
+//             console.log(err)
+//         } else {
+//             console.log("file written")
+//         }
+//     })
+// }
+
+// Try async version 
+const makeFile = async function (location, data) {
+
+    try {
+        return await fs.writeFile(location, data, "utf-8")
+    } catch (err) {
+        console.err("Error writing file: err")
+    }
 }
+
+// async function writeData(name) {
+//     try {
+//       return await fs.writeFile("person.txt", name, "utf8") //options can use the shorthand version here, just a string automatically assigns file encoding
+//     } catch (err) {
+//       console.error('Error occurred while writing file:', err)
+//     }
+//   }
 
 
 const dateNamer = function () {

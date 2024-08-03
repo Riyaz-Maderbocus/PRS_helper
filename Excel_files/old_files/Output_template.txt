@@ -1,3 +1,0 @@
-[Required Qty/Batch] "X" [Cat No] "Item: "[Item Name] [Grade]
-
-2 X 

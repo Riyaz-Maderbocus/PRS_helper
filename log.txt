@@ -38,3 +38,67 @@ Name after the date
 Need to delete previous data present.
 
 Done the above, need to make it an express app.
+
+
+For some reason Express wouldn't use my imported read file from excel functions. I had to read it in.
+
+TypeError [ERR_INVALID_ARG_VALUE]: The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received <Buffer 50 4b 03 04 14 00 06 00 08 00 00 00 21 00 62 ee 9d 68 5e 01 00 00 90 04 00 00 13 00 08 02 5b 43 6f 6e 74 65 6e 74 5f 54 ...
+    at Object.openSync (node:fs:579:10)
+    at Object.readFileSync (node:fs:457:35)
+    at read_binary (D:\Documents\Web Development\Random Projects\CPI_Projects\240715_PRS_Excel\node_modules\xlsx\xlsx.js:3153:44)
+    at readSync (D:\Documents\Web Development\Random Projects\CPI_Projects\240715_PRS_Excel\node_modules\xlsx\xlsx.js:23698:69)
+    at Object.readFileSync (D:\Documents\Web Development\Random Projects\CPI_Projects\240715_PRS_Excel\node_modules\xlsx\xlsx.js:23738:9)
+    at Object.readFile (D:\Documents\Web Development\Random Projects\CPI_Projects\240715_PRS_Excel\utils\excel_methods.js:39:27)
+    at D:\Documents\Web Development\Random Projects\CPI_Projects\240715_PRS_Excel\expressApp.js:37:38 {
+  code: 'ERR_INVALID_ARG_VALUE'
+}
+
+
+Maybe it has something to do with the stream.
+
+
+Another problem is it writes the file but res.download works before it has written. So you get an empty file back.
+
+I don't know enough async to get around this.
+I cheated and used a setTimeout at the end of my try catch block to do this.
+
+        setTimeout(() => {
+            res.download(path.join(outputFolder + "/" + newFileName + ".txt"));
+        }, 2000)
+
+There has to be a neater way around this.
+
+
+Using a async IIFE could get it to work. You have to put your res.download as a .then.
+
+original was
+
+        try {
+            console.log(fileWriter.dateNamer());
+            newFileName = fileWriter.dateNamer();
+            outputFolder = path.join(__dirname, "/outputs");
+            fileWriter.deleteOldFiles(outputFolder);
+
+
+
+            fileWriter.makeFile(`${outputFolder}/${newFileName}.txt`, data);
+        } catch (e) {
+            console.log("Problem writing file");
+        }
+
+Updated to 
+
+        (async () => {
+            try {
+
+                newFileName = fileWriter.dateNamer();
+                outputFolder = path.join(__dirname, "/outputs");
+                fileWriter.deleteOldFiles(outputFolder);
+                await fileWriter.makeFile(`${outputFolder}/${newFileName}.txt`, data)
+                    .then(() => res.download(path.join(outputFolder + "/" + newFileName + ".txt")))
+
+            } catch (e) {
+                // this should catch all exceptions
+                console.log("Problem writing file");
+            }
+        })();

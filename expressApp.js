@@ -36,9 +36,11 @@ app.post('/upload', upload.single('file'), (req, res) => {
         res.json(jsonData);
     } catch (error) {
         console.error(error);
-        res.status(500).json({
-            error: 'Failed to process the uploaded file'
-        });
+        // res.status(500).json({
+        //     error: 'Failed to process the uploaded file'
+        // });
+        console.log("Going back");
+        res.redirect("/");
     }
 });
 

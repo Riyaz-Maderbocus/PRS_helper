@@ -99,7 +99,7 @@ const deleteOldFiles = function (location) {
 
 
 
-exports.getSuppliers = getUniqueSuppliers;
+exports.getUniqueSuppliers = getUniqueSuppliers;
 exports.makeContent = makeContent;
 exports.makeFile = makeFile;
 exports.dateNamer = dateNamer;

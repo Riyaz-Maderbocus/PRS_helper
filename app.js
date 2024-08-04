@@ -77,7 +77,8 @@ async function test() {
             console.log(excel.checkHeaders(excel.headerTest, headers));
             console.log(excel.headerTest);
             console.log(headers);
-            console.log("Headers wrong")
+            console.log("Headers wrong");
+
         }
 
         // Was working

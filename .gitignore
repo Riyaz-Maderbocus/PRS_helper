@@ -1,7 +1,8 @@
 node_modules
 log.txt
 Learnings.docx
-app.js
-expressPlay.js
+/app.js
+/expressPlay.js
 package-lock.json
 Excel_templates/old_sheets/
+utils/greeter.js

@@ -22,13 +22,18 @@ const upload = multer({
 
 
 
+
 app.get("/", (req, res) => {
+    let message;
     // res.sendFile(__dirname + '/views/index.html');
-    res.render("index");
+    res.render("index", {
+        message
+    })
 })
 
 // Upload endpoint
 app.post('/upload', upload.single('file'), async (req, res) => {
+    let message;
     try {
         const workbook = xlsx.read(req.file.buffer, {
             type: 'buffer'
@@ -56,7 +61,13 @@ app.post('/upload', upload.single('file'), async (req, res) => {
         // }
 
         if (!excel.emptyDataCheck(arrItems)) {
-            throw new Error("Data is empty")
+            message = "Data is empty";
+            // res.redirect("/", {
+            //     message
+            // });
+            throw new Error("Data is empty");
+
+
         }
         // Check headers first as the major check
 
@@ -69,6 +80,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
         if (!excel.checkHeaders(excel.headerTest, headers)) {
             console.log(excel.checkHeaders(excel.headerTest, headers));
             // res.redirect("/");
+            message = "Table headers don't match"
             throw new Error("headers don't match");
         }
 
@@ -101,12 +113,23 @@ app.post('/upload', upload.single('file'), async (req, res) => {
                 newFileName = fileWriter.dateNamer();
                 outputFolder = path.join(__dirname, "/outputs");
                 fileWriter.deleteOldFiles(outputFolder);
+
                 await fileWriter.makeFile(`${outputFolder}/${newFileName}.txt`, data)
                     .then(() => res.download(path.join(outputFolder + "/" + newFileName + ".txt")))
+                // .then(() => {
+                //     message = "Success";
+                //     res.render("index", {
+                //         message
+                //     });
+                // })
+                // message.success = "Success"
+
 
             } catch (e) {
                 // this should catch all exceptions
+                message = "Problem writing the output file"
                 console.log("Problem writing file");
+                console.error(e)
             }
         })();
 
@@ -124,7 +147,11 @@ app.post('/upload', upload.single('file'), async (req, res) => {
     } catch (error) {
         console.error(error);
         console.log("Problem reading file");
-        res.redirect("/");
+        if (!message) message = "Problem reading file or no file submitted"
+        console.log(message);
+        res.render("index", {
+            message
+        })
     }
 });
 

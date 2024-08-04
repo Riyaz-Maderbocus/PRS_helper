@@ -17,6 +17,7 @@
         <div class="content">
             <h1>PRS order helper</h1>
 
+
             <div class="description-section">
                 <h2>This tool will help make the comment text in PRS quicker</h2>
                 <div class="instruction-section">
@@ -29,7 +30,7 @@
                         <li>If you don't have a value for optional entries (e.g. GIX numbers), you can delete that
                             header</li>
                         <li>Upload your spreadsheet using the upload button</li>
-                        <li>Press submit to get your text file</li>
+                        <li>Press submit to get your text file. It will be a download</li>
                         <li>If you see things like "NaN" for numbers, your entries are most likely text. Change them to
                             numbers in the spreadsheet and upload and sumbit again</li>
                     </ul>
@@ -41,7 +42,17 @@
                 </div>
                 <p>Download a copy of the template using the button below</p>
                 <a href="" class="btn">Get template spreadsheet</a>
+
+                <div class="error-section">
+
+                    <% if (locals.message) { %>
+                    <h2><%= message %></h2>
+                    <% } %>
+
+                </div>
             </div>
+
+
 
             <div class="form-section">
                 <form action="/upload" method="post" id="form" enctype="multipart/form-data">

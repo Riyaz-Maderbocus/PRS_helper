@@ -12,6 +12,7 @@ const PORT = process.env.port || 3000;
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname + "/views"));
 app.use(express.static("public"));
+app.use(express.static("Excel_templates"));
 
 // Multer configuration
 const storage = multer.memoryStorage();
@@ -116,13 +117,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 
                 await fileWriter.makeFile(`${outputFolder}/${newFileName}.txt`, data)
                     .then(() => res.download(path.join(outputFolder + "/" + newFileName + ".txt")))
-                // .then(() => {
-                //     message = "Success";
-                //     res.render("index", {
-                //         message
-                //     });
-                // })
-                // message.success = "Success"
+
 
 
             } catch (e) {

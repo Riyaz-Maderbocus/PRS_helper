@@ -79,7 +79,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 
         // if (!await excel.checkHeaders(excel.headerTest, headers)) {
         if (!excel.checkHeaders(excel.headerTest, headers)) {
-            console.log(excel.checkHeaders(excel.headerTest, headers));
+            // console.log(excel.checkHeaders(excel.headerTest, headers));
             // res.redirect("/");
             message = "Table headers don't match"
             throw new Error("headers don't match");
@@ -128,8 +128,8 @@ app.post('/upload', upload.single('file'), async (req, res) => {
             }
         })();
 
-        console.log(path.join(outputFolder + "/" + newFileName + ".txt"));
-        console.log(path.join("./outputs/" + newFileName + ".txt"));
+        // console.log(path.join(outputFolder + "/" + newFileName + ".txt"));
+        // console.log(path.join("./outputs/" + newFileName + ".txt"));
 
         // setTimeout(() => {
         //     res.download(path.join(outputFolder + "/" + newFileName + ".txt"));
@@ -141,9 +141,9 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 
     } catch (error) {
         console.error(error);
-        console.log("Problem reading file");
+        // console.log("Problem reading file");
         if (!message) message = "Problem reading file or no file submitted"
-        console.log(message);
+        // console.log(message);
         res.render("index", {
             message
         })

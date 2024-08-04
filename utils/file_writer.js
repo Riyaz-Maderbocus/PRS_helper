@@ -3,7 +3,7 @@ const path = require("path");
 const findRemoveSync = require('find-remove');
 // console.log("helo")
 
-console.log(path.join(__dirname, "/views"));
+// console.log(path.join(__dirname, "/views"));
 
 // Use path.join() to make a directory
 
@@ -30,7 +30,7 @@ const makeContent = function (suppliers, excelJSON) {
         let total = 0;
         for (let row of excelJSON) {
             if (row.Supplier === supplier) {
-                console.log("********");
+                // console.log("********");
 
                 let newInfo = `${row["Qty"]} x Cat No: ${row["Cat No"]}, Item: ${row["Item"]}`
                 let gradeInfo = row["Grade (optional)"] ? `, Grade: ${row["Grade (optional)"]}` : "";
@@ -50,8 +50,8 @@ const makeContent = function (suppliers, excelJSON) {
 
                 total += parseFloat(row["Cost per Unit"]) * parseInt(row["Qty"])
 
-                console.log(newInfo);
-                console.log("********");
+                // console.log(newInfo);
+                // console.log("********");
                 final += newInfo;
                 final += "\n\n"
             }

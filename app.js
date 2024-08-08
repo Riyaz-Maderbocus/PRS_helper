@@ -9,7 +9,7 @@ async function test() {
 
 
 
-        const workbook = await excel.readFile("./Excel_files/Input_file_test.xlsx");
+        const workbook = await excel.readFile("./Excel_templates/Input_file_template.xlsx");
 
 
 

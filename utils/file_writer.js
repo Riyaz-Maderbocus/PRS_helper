@@ -41,12 +41,18 @@ const makeContent = function (suppliers, excelJSON) {
                 let gixInfo = row["GIX No (optional)"] ? `, GIX No: ${row["GIX No (optional)"]}` : "";
                 // console.log(gixInfo);
                 newInfo += gixInfo;
+                let mNumber = row["M-number (optional)"] ? `, M-number: ${row["M-number (optional)"]}` : "";
+                newInfo += mNumber;
                 let unitCost = `, Cost per unit: £${parseFloat(row["Cost per Unit"])}`;
                 newInfo += unitCost;
                 // console.log(unitCost);
+
+                let additionalComments = row["Additional Comments (optional)"] ? `, (Additional Info: ${row["Additional Comments (optional)"]})` : "";
+                newInfo += additionalComments;
                 let subtotalCost = `, Subtotal = £${parseFloat(row["Cost per Unit"]) * parseInt(row["Qty"])}`;
                 newInfo += subtotalCost;
                 // console.log(subtotalCost);
+
 
                 total += parseFloat(row["Cost per Unit"]) * parseInt(row["Qty"])
 

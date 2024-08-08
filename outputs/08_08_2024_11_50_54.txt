@@ -1,0 +1,62 @@
+
+****** Avanti ******
+
+
+2 x Cat No: 730150, Item: DMPE-PEG2000, Grade: GMP Grade, Pack size: 250, GIX No: GIR-00022, Cost per unit: £5662.5, Subtotal = £11325
+
+2 x Cat No: 730365, Item: DSPC, Grade: GMP Grade, Pack size: 400, GIX No: GIR-00021, Cost per unit: £1404.6, Subtotal = £2809.2
+
+Total is: £14134.2
+
+
+
+
+****** New England Biolabs ******
+
+
+3 x Cat No: G1000B, Item: ATP, 100mM, Grade: GMP Grade, Pack size: 1, GIX No: GIR-00004, Cost per unit: £192, Subtotal = £576
+
+3 x Cat No: G1003B, Item: CTP, 100mM, Grade: GMP Grade, Pack size: 1, GIX No: GIR-00006, Cost per unit: £192, Subtotal = £576
+
+3 x Cat No: G1001B, Item: GTP, 100mM, Grade: GMP Grade, Pack size: 1, GIX No: GIR-00005, Cost per unit: £192, Subtotal = £576
+
+3 x Cat No: G1002B, Item: UTP, 100mM, Grade: GMP Grade, Pack size: 1, GIX No: GIR-00007, Cost per unit: £192, Subtotal = £576
+
+Total is: £2304
+
+
+
+
+****** Sigma Aldrich ******
+
+
+3 x Cat No: 1046720001, Item: Synthecol Synthetic Cholesterol Emprove Expert, Grade: GMP Grade, Pack size: 500, GIX No: GIR-00024, Cost per unit: £65, Subtotal = £195
+
+2 x Cat No: 1101652500, Item: 1M Hydrochloric Acid, Emprove Expert, Grade: GMP Grade, Pack size: 2.5, GIX No: GIR-00015, Cost per unit: £53, Subtotal = £106
+
+9 x Cat No: 59331C-1000ML, Item: Dulbecco's Phosphate Buffered Saline 10X, Grade: Further Manufacturing Use, Pack size: 4, GIX No: GIR-00025, Cost per unit: £0, Subtotal = £0
+
+2 x Cat No: 1058190250, Item: Magnesium Acetate Tetrahydrate, EMSURE ACS, Reag. Ph. Eur, Grade: Ph. Eur Grade, Pack size: 2.15, GIX No: GIR-00018, Cost per unit: £69, Subtotal = £138
+
+2 x Cat No: 1282021001, Item: Sodium acetate anhydrous Emprove Expert ChP USO, Grade: GMP Grade, Pack size: 40.12, GIX No: GIR-00012, Cost per unit: £53, Subtotal = £106
+
+2 x Cat No: 1162241000, Item: Sodium Chloride Emprove Expert Ph. Eur., BP, JP, USP, Grade: GMP Grade, Pack size: 45.66, GIX No: GIR-00013, Cost per unit: £296, Subtotal = £592
+
+9 x Cat No: 1037891000, Item: Sucrose Emprove Expert, Ph. Eur., ChP, JP, NF, Grade: GMP Grade, Pack size: 3.6, GIX No: GIR-00023, Cost per unit: £402, Subtotal = £3618
+
+Total is: £4755
+
+
+
+
+****** VWR ******
+
+
+9 x Cat No: 20816.298DP, Item: Ethanol Ph. Eur., Grade: Ph. Eur Grade, Pack size: 285, GIX No: GIR-00014, Cost per unit: £111.75, Subtotal = £1005.75
+
+2 x Cat No: 25012.237, Item: Lithium chloride ≥99.0%, AnalaR NORMAPUR® Reag. Ph. Eur., Grade: Ph. Eur Grade, Pack size: 12.72, GIX No: GIR-00017, Cost per unit: £69.52, Subtotal = £139.04
+
+Total is: £1144.79
+
+
+
